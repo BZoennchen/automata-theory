@@ -1,0 +1,1 @@
+To use the code import the project as maven project. Each IDE should support maven projects. The best way to start is to look at the test classes, which shows how one can create grammars etc.
