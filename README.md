@@ -12,3 +12,23 @@ It is possible to reduce the equivalence problem of sequential tree-to-word tran
 
 ## Equivalence test for Linear Tree-to-Word Transducers
 The last step was to reduce the orignal problem to the equivalence problem. This reduction is described in [Deciding Equivalence of Linear Tree-to-Word Transducers in Polynomial Time](https://arxiv.org/abs/1606.03758). 
+
+# Examples
+
+## Equivalence test for SLP-compressed words
+
+The following code shows how one can test the equivalence of SLPs.
+
+```java
+String grammar1 = "S -> aBaaaBaaaB \n B -> eCCCee \n C -> c";
+String grammar2 = "A -> aDaaaDaaaD \n D -> eECee \n C -> c \n E -> CC";
+
+CFGCreatorFactory<Character> factory = new CFGCreatorFactory<>();
+CFGCreator<Character> cfgCreator = factory.create();
+CharGrammarParser parser = new CharGrammarParser(cfgCreator);
+
+SLP<Character> slp1 = parser.createSLP(grammar1);
+SLP<Character> slp2 = parser.createSLP(grammar2);
+SLPOp cfgOp = new SLPOp();
+assertTrue(cfgOp.equals(slp1, slp2, factory, false, false));
+```
