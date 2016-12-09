@@ -1,4 +1,4 @@
-# The Problem
+# What is the purpose of the library
 This libary is the result of solving a the equivalence problem for linear tree-to-word transducers from the field of automaton theory. However, on the way to the solution a lot of interesting algorithm were implemented. Some basic algorithm such as the equivalence test for finite deterministic word automaton and more complex algorithms for example a fast equivalence test for SLP-compressed words. The goal of the project was to implement an algorithm with polynomial time complexity for testing the equivalence of linear tree-to-word transducers. 
 
 ## Equivalence test for SLP-compressed words
